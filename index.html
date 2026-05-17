@@ -9,31 +9,15 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --black:#0A0A0A;
-  --white:#F5F2EC;
-  --gold:#C9A84C;
-  --gold-dim:#8A6B2E;
-  --surface:#111111;
-  --surface2:#1A1A1A;
-  --border:#2A2A2A;
-  --border2:#333;
-  --text:#F5F2EC;
-  --text-dim:#888;
-  --text-muted:#444;
-  --teal:#1D9E75;
-  --teal-dim:#0F6E56;
-  --red:#E24B4A;
-  --mono:'DM Mono',monospace;
+  --black:#0A0A0A;--white:#F5F2EC;--gold:#C9A84C;--gold-dim:#8A6B2E;
+  --surface:#111111;--surface2:#1A1A1A;--border:#2A2A2A;--border2:#333;
+  --text:#F5F2EC;--text-dim:#888;--text-muted:#444;--teal:#1D9E75;
+  --teal-dim:#0F6E56;--red:#E24B4A;--mono:'DM Mono',monospace;
   --serif:'Cormorant Garamond',serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--mono);font-weight:300;overflow-x:hidden}
-
-/* PAGES */
-.page{display:none;min-height:100vh}
-.page.active{display:block}
-
-/* ─── NAV ─── */
+.page{display:none;min-height:100vh}.page.active{display:block}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all 0.4s}
 nav.scrolled{background:rgba(10,10,10,0.95);border-color:var(--border);backdrop-filter:blur(12px)}
 .nav-logo{font-family:var(--serif);font-size:1.5rem;font-weight:300;letter-spacing:0.2em;color:var(--text);cursor:pointer}
@@ -42,8 +26,6 @@ nav.scrolled{background:rgba(10,10,10,0.95);border-color:var(--border);backdrop-
 .nav-links a:hover{color:var(--text)}
 .nav-cta{background:var(--gold);color:var(--black);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.6rem 1.5rem;border:none;cursor:pointer;transition:all 0.2s}
 .nav-cta:hover{background:var(--white)}
-
-/* ─── LANDING ─── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;opacity:0.3}
 .hero-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
@@ -61,15 +43,11 @@ nav.scrolled{background:rgba(10,10,10,0.95);border-color:var(--border);backdrop-
 .hero-stat{text-align:center}
 .hero-stat-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--white)}
 .hero-stat-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-top:0.25rem}
-
-/* FRICTIONS SECTION */
-.section{padding:8rem 2.5rem}
-.section-inner{max-width:1100px;margin:0 auto}
+.section{padding:8rem 2.5rem}.section-inner{max-width:1100px;margin:0 auto}
 .section-label{font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .section-title{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:1.5rem}
 .section-title em{font-style:italic;color:var(--text-dim)}
 .section-body{font-size:0.8rem;letter-spacing:0.05em;color:var(--text-dim);line-height:1.9;max-width:520px}
-
 .frictions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);margin-top:5rem}
 .friction-item{background:var(--black);padding:2.5rem;position:relative;overflow:hidden;transition:background 0.3s}
 .friction-item:hover{background:var(--surface)}
@@ -79,59 +57,30 @@ nav.scrolled{background:rgba(10,10,10,0.95);border-color:var(--border);backdrop-
 .friction-name{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.75rem;text-decoration:line-through}
 .friction-solved{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
 .friction-desc{font-size:0.78rem;color:var(--text-dim);line-height:1.8}
-
-/* HOW IT WORKS */
-.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
-@media(max-width:768px){.how-grid{grid-template-columns:1fr}}
-.steps{display:flex;flex-direction:column;gap:0}
-.step{display:flex;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--border);position:relative}
-.step:last-child{border-bottom:none}
-.step-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--text-muted);min-width:3rem;line-height:1}
-.step-content h3{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);margin-bottom:0.5rem;font-weight:400}
-.step-content p{font-size:0.75rem;color:var(--text-dim);line-height:1.8}
-.score-demo{background:var(--surface);border:1px solid var(--border);padding:2.5rem;position:relative}
-.score-demo::before{content:'NEXUM TRUST SCORE';position:absolute;top:-0.5rem;left:1.5rem;background:var(--black);padding:0 0.5rem;font-size:0.55rem;letter-spacing:0.3em;color:var(--gold)}
-.score-ring{width:180px;height:180px;margin:0 auto 2rem;position:relative}
-.score-ring svg{transform:rotate(-90deg)}
-.score-ring-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.score-ring-num span:first-child{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:var(--white);line-height:1}
-.score-ring-num span:last-child{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
-.score-factors{display:flex;flex-direction:column;gap:0.75rem}
-.score-factor{display:flex;align-items:center;gap:1rem}
-.score-factor-label{font-size:0.65rem;letter-spacing:0.1em;color:var(--text-dim);min-width:120px}
-.score-factor-bar{flex:1;height:2px;background:var(--border)}
-.score-factor-fill{height:100%;background:var(--teal);transition:width 1.5s ease}
-.score-factor-val{font-size:0.65rem;color:var(--text-dim);min-width:2rem;text-align:right}
-
-/* REVENUE */
 .revenue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);margin-top:4rem}
 .revenue-item{background:var(--surface);padding:2rem}
 .revenue-item h3{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;font-weight:400}
 .revenue-item .rate{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:0.5rem}
 .revenue-item p{font-size:0.72rem;color:var(--text-dim);line-height:1.7}
-
-/* CTA SECTION */
 .cta-section{padding:10rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.05),transparent)}
 .cta-title{font-family:var(--serif);font-size:clamp(3rem,7vw,6rem);font-weight:300;font-style:italic;color:var(--white);margin-bottom:2rem}
 .cta-sub{font-size:0.78rem;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:3rem}
-
-/* FOOTER */
 footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:var(--serif);font-size:1.25rem;font-weight:300;letter-spacing:0.2em;color:var(--text-dim)}
 .footer-copy{font-size:0.6rem;letter-spacing:0.15em;color:var(--text-muted)}
-
-/* ─── REGISTRATION ─── */
+/* REGISTRATION */
 .reg-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem;background:var(--black);position:relative}
 .reg-page::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.2}
 .reg-card{background:var(--surface);border:1px solid var(--border);padding:3.5rem;max-width:480px;width:100%;position:relative;z-index:1}
 .reg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
 .reg-logo{font-family:var(--serif);font-size:2rem;font-weight:300;letter-spacing:0.2em;margin-bottom:2.5rem;display:flex;align-items:center;gap:0.5rem}
 .reg-logo span{width:8px;height:8px;background:var(--gold);display:inline-block}
+.progress-bar{height:2px;background:var(--border);margin-bottom:2.5rem;position:relative}
+.progress-fill{position:absolute;left:0;top:0;height:100%;background:var(--gold);transition:width 0.5s}
 .reg-step-indicator{display:flex;gap:0.5rem;margin-bottom:2.5rem}
 .reg-step-dot{width:6px;height:6px;background:var(--border2);transition:background 0.3s}
-.reg-step-dot.active{background:var(--gold)}
-.reg-step-dot.done{background:var(--teal)}
+.reg-step-dot.active{background:var(--gold)}.reg-step-dot.done{background:var(--teal)}
 .reg-title{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--white);margin-bottom:0.5rem}
 .reg-sub{font-size:0.72rem;color:var(--text-dim);letter-spacing:0.05em;line-height:1.7;margin-bottom:2rem}
 .field{margin-bottom:1.5rem}
@@ -141,21 +90,21 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .field input::placeholder{color:var(--text-muted)}
 .field-note{font-size:0.62rem;color:var(--text-muted);margin-top:0.4rem;letter-spacing:0.05em}
 .reg-btn{width:100%;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
-.reg-btn:hover{background:var(--white)}
-.reg-btn:disabled{background:var(--border2);color:var(--text-muted);cursor:not-allowed}
+.reg-btn:hover{background:var(--white)}.reg-btn:disabled{background:var(--border2);color:var(--text-muted);cursor:not-allowed}
 .reg-back{background:transparent;border:none;color:var(--text-dim);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;cursor:pointer;margin-top:1rem;display:block;width:100%;text-align:center;padding:0.5rem;transition:color 0.2s}
 .reg-back:hover{color:var(--text)}
-.reg-step{display:none}
-.reg-step.active{display:block}
+.reg-step{display:none}.reg-step.active{display:block}
 .otp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0.5rem}
 .otp-input{background:var(--black);border:1px solid var(--border2);color:var(--text);font-family:var(--mono);font-size:1.2rem;padding:0.75rem;text-align:center;outline:none;transition:border-color 0.2s}
 .otp-input:focus{border-color:var(--gold)}
-.progress-bar{height:2px;background:var(--border);margin-bottom:2.5rem;position:relative}
-.progress-fill{position:absolute;left:0;top:0;height:100%;background:var(--gold);transition:width 0.5s}
 .success-icon{width:64px;height:64px;border:1px solid var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
 .success-icon svg{stroke:var(--teal)}
-
-/* ─── PROFILE / DASHBOARD ─── */
+/* ALERT / ERROR */
+.alert{padding:0.85rem 1rem;font-size:0.72rem;margin-bottom:1rem;border:1px solid;display:none}
+.alert.error{background:rgba(226,75,74,0.1);border-color:var(--red);color:var(--red)}
+.alert.success{background:rgba(29,158,117,0.1);border-color:var(--teal);color:var(--teal)}
+.alert.show{display:block}
+/* DASHBOARD */
 .app-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
 @media(max-width:900px){.app-layout{grid-template-columns:1fr}}
 .sidebar{background:var(--surface);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
@@ -170,13 +119,28 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .sidebar-user{display:flex;align-items:center;gap:0.75rem}
 .sidebar-avatar{width:32px;height:32px;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:0.9rem;color:var(--black)}
 .sidebar-name{font-size:0.65rem;letter-spacing:0.1em;color:var(--text-dim)}
-
 .main-content{padding:3rem 2.5rem;overflow-y:auto}
 .main-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
 .main-header h1{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--white)}
 .main-header p{font-size:0.65rem;letter-spacing:0.15em;color:var(--text-dim);margin-top:0.25rem}
-
-/* Profile */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);margin-bottom:2rem}
+.metric-card{background:var(--surface);padding:1.75rem 2rem}
+.metric-card-label{font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.75rem}
+.metric-card-val{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:0.25rem}
+.metric-card-sub{font-size:0.62rem;color:var(--text-muted)}.metric-card-sub.up{color:var(--teal)}
+.activity-table{background:var(--surface);border:1px solid var(--border);margin-top:2rem}
+.activity-table-header{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.activity-table-header h3{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-dim);font-weight:400}
+.activity-row{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:1rem;transition:background 0.2s}
+.activity-row:last-child{border-bottom:none}.activity-row:hover{background:rgba(255,255,255,0.02)}
+.activity-row-info h4{font-size:0.72rem;color:var(--text);font-weight:300;margin-bottom:0.2rem}
+.activity-row-info p{font-size:0.62rem;color:var(--text-muted)}
+.activity-row-type{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.75rem}
+.type-payment{background:rgba(29,158,117,0.1);color:var(--teal)}
+.type-query{background:rgba(201,168,76,0.1);color:var(--gold)}
+.type-verification{background:rgba(55,138,221,0.1);color:#378ADD}
+.activity-row-amount{font-family:var(--serif);font-size:1rem;font-weight:300;text-align:right}
+.activity-row-amount.positive{color:var(--teal)}.activity-row-amount.neutral{color:var(--text-dim)}
 .profile-top{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
 @media(max-width:700px){.profile-top{grid-template-columns:1fr}}
 .profile-card{background:var(--surface);border:1px solid var(--border);padding:2rem}
@@ -186,7 +150,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .trust-score-big .meta{padding-bottom:0.75rem}
 .trust-score-big .meta .tier{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.25rem}
 .trust-score-big .meta .change{font-size:0.7rem;color:var(--text-dim)}
-.score-bar-track{height:3px;background:var(--border);margin-bottom:1.5rem;position:relative}
+.score-bar-track{height:3px;background:var(--border);margin-bottom:1.5rem}
 .score-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width 1.5s ease}
 .score-breakdown{display:flex;flex-direction:column;gap:0.75rem}
 .score-row{display:flex;align-items:center;gap:1rem}
@@ -194,7 +158,6 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .score-row-bar{flex:1;height:2px;background:var(--border);position:relative}
 .score-row-fill{height:100%;background:var(--teal);transition:width 1.5s}
 .score-row-val{font-size:0.65rem;color:var(--text-dim);min-width:2.5rem;text-align:right}
-
 .identity-card{background:var(--surface);border:1px solid var(--border);padding:2rem}
 .verified-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.3);padding:0.4rem 0.75rem;margin-bottom:1.5rem}
 .verified-badge span{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal)}
@@ -205,58 +168,20 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .id-field-label{font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted)}
 .id-field-val{font-size:0.8rem;color:var(--text)}
 .id-field-status{font-size:0.6rem;color:var(--teal)}
-
-.activity-table{background:var(--surface);border:1px solid var(--border);margin-top:2rem}
-.activity-table-header{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.activity-table-header h3{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-dim);font-weight:400}
-.activity-table-header span{font-size:0.6rem;letter-spacing:0.1em;color:var(--text-muted)}
-.activity-row{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:1rem;transition:background 0.2s}
-.activity-row:last-child{border-bottom:none}
-.activity-row:hover{background:rgba(255,255,255,0.02)}
-.activity-row-info h4{font-size:0.72rem;color:var(--text);font-weight:300;margin-bottom:0.2rem}
-.activity-row-info p{font-size:0.62rem;color:var(--text-muted)}
-.activity-row-type{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.75rem}
-.type-payment{background:rgba(29,158,117,0.1);color:var(--teal)}
-.type-query{background:rgba(201,168,76,0.1);color:var(--gold)}
-.type-verification{background:rgba(55,138,221,0.1);color:#378ADD}
-.activity-row-amount{font-family:var(--serif);font-size:1rem;font-weight:300;text-align:right}
-.activity-row-amount.positive{color:var(--teal)}
-.activity-row-amount.neutral{color:var(--text-dim)}
-
-/* Dashboard metrics */
-.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);margin-bottom:2rem}
-.metric-card{background:var(--surface);padding:1.75rem 2rem}
-.metric-card-label{font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.75rem}
-.metric-card-val{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:0.25rem}
-.metric-card-sub{font-size:0.62rem;color:var(--text-muted)}
-.metric-card-sub.up{color:var(--teal)}
-
-/* TABS */
-.tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:1px solid var(--border)}
-.tab{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 1.5rem;color:var(--text-dim);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--mono)}
-.tab.active{color:var(--gold);border-bottom-color:var(--gold)}
-.tab-content{display:none}
-.tab-content.active{display:block}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-.animate-in{opacity:0;transform:translateY(15px);transition:opacity 0.6s,transform 0.6s}
-.animate-in.visible{opacity:1;transform:translateY(0)}
-
-/* Scanline effect for cards */
-.scanline{position:relative;overflow:hidden}
-.scanline::after{content:'';position:absolute;top:-100%;left:0;right:0;height:40%;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.03),transparent);animation:scan 4s linear infinite;pointer-events:none}
-@keyframes scan{0%{top:-40%}100%{top:140%}}
-
-/* Loading overlay */
+.tab-content{display:none}.tab-content.active{display:block}
 .loading-overlay{position:fixed;inset:0;background:var(--black);z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity 0.5s}
 .loading-overlay.hidden{opacity:0;pointer-events:none}
 .loading-logo{font-family:var(--serif);font-size:3rem;font-weight:300;letter-spacing:0.3em;color:var(--white)}
 .loading-bar{width:200px;height:1px;background:var(--border)}
 .loading-fill{height:100%;background:var(--gold);animation:load 1.5s ease forwards}
-@keyframes load{from{width:0}to{width:100%}}
 .loading-text{font-size:0.6rem;letter-spacing:0.3em;color:var(--text-muted);animation:pulse 1.5s infinite}
+.spinner{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block;vertical-align:middle;margin-right:0.5rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+@keyframes load{from{width:0}to{width:100%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.animate-in{opacity:0;transform:translateY(15px);transition:opacity 0.6s,transform 0.6s}
+.animate-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -268,21 +193,19 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
   <div class="loading-text">Initialising trust layer</div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-logo" onclick="showPage('landing')">NEXUM</div>
   <div class="nav-links">
     <a onclick="scrollToSection('frictions')">How it works</a>
     <a onclick="scrollToSection('revenue')">For Business</a>
-    <a onclick="showPage('dashboard')">Dashboard</a>
+    <a onclick="requireAuth()">Dashboard</a>
     <button class="nav-cta" onclick="showPage('register')">Get Verified</button>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════ LANDING PAGE ═══ -->
+<!-- ═══ LANDING ═══ -->
 <div id="page-landing" class="page active">
-
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
@@ -296,167 +219,44 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">Frictions removed</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">$3.1T</div>
-        <div class="hero-stat-label">Market size</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">∞</div>
-        <div class="hero-stat-label">Upside ceiling</div>
-      </div>
+      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Frictions removed</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$3.1T</div><div class="hero-stat-label">Market size</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Upside ceiling</div></div>
     </div>
   </section>
 
-  <!-- Frictions -->
   <section class="section" id="frictions">
     <div class="section-inner">
       <p class="section-label">What NEXUM destroys</p>
       <h2 class="section-title">Every barrier between<br><em>you and your market.</em></h2>
       <p class="section-body">Africa's informal economy loses trillions every year not because demand doesn't exist — but because four invisible frictions kill every transaction before it completes.</p>
       <div class="frictions">
-        <div class="friction-item animate-in">
-          <div class="friction-num">01</div>
-          <div class="friction-name">Trust friction</div>
-          <div class="friction-solved">↳ Verified identity layer</div>
-          <p class="friction-desc">Every landlord, employer, and buyer needs to know who they're dealing with. NEXUM gives every person a trust profile backed by real data — immutable, portable, permanent.</p>
-        </div>
-        <div class="friction-item animate-in">
-          <div class="friction-num">02</div>
-          <div class="friction-name">Payment friction</div>
-          <div class="friction-solved">↳ Native M-Pesa + card rails</div>
-          <p class="friction-desc">One tap. STK push. The moment of decision and the moment of payment become the same moment. No friction. No drop-off. No failure.</p>
-        </div>
-        <div class="friction-item animate-in">
-          <div class="friction-num">03</div>
-          <div class="friction-name">Logistics friction</div>
-          <div class="friction-solved">↳ Last-mile coordination</div>
-          <p class="friction-desc">NEXUM coordinates delivery through a verified network of riders — without owning a single vehicle. Pure coordination layer. Every order tracked. Every delivery confirmed.</p>
-        </div>
-        <div class="friction-item animate-in">
-          <div class="friction-num">04</div>
-          <div class="friction-name">Infrastructure friction</div>
-          <div class="friction-solved">↳ Digital operating layer</div>
-          <p class="friction-desc">The storefront, the inventory system, the order tracking, the analytics — the infrastructure informal sellers never had, delivered as a service that costs nothing to start.</p>
-        </div>
+        <div class="friction-item animate-in"><div class="friction-num">01</div><div class="friction-name">Trust friction</div><div class="friction-solved">↳ Verified identity layer</div><p class="friction-desc">Every landlord, employer, and buyer needs to know who they're dealing with. NEXUM gives every person a trust profile backed by real data.</p></div>
+        <div class="friction-item animate-in"><div class="friction-num">02</div><div class="friction-name">Payment friction</div><div class="friction-solved">↳ Native M-Pesa + card rails</div><p class="friction-desc">One tap. STK push. The moment of decision and the moment of payment become the same moment.</p></div>
+        <div class="friction-item animate-in"><div class="friction-num">03</div><div class="friction-name">Logistics friction</div><div class="friction-solved">↳ Last-mile coordination</div><p class="friction-desc">NEXUM coordinates delivery through a verified network of riders without owning a single vehicle.</p></div>
+        <div class="friction-item animate-in"><div class="friction-num">04</div><div class="friction-name">Infrastructure friction</div><div class="friction-solved">↳ Digital operating layer</div><p class="friction-desc">The storefront, inventory, order tracking — the infrastructure informal sellers never had, as a service.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- How trust score works -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <div class="section-inner">
-      <div class="how-grid">
-        <div>
-          <p class="section-label">The trust engine</p>
-          <h2 class="section-title">Your score is<br><em>your currency.</em></h2>
-          <p class="section-body" style="margin-bottom:2rem">A NEXUM trust score is not a credit score. It is a comprehensive measure of who you are as an economic actor — built from every verified interaction you have ever had.</p>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">I</div>
-              <div class="step-content">
-                <h3>Verify your identity</h3>
-                <p>National ID + M-Pesa number. Two minutes. Your digital identity is anchored to your real identity.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">II</div>
-              <div class="step-content">
-                <h3>Build your history</h3>
-                <p>Every transaction, every reference, every completed delivery adds to your trust profile. The score grows with you.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">III</div>
-              <div class="step-content">
-                <h3>Unlock your market</h3>
-                <p>A high trust score gets you the house, the job, the client. It is your reputation made portable and permanent.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="score-demo scanline">
-          <div class="score-ring" id="scoreRing">
-            <svg viewBox="0 0 180 180" width="180" height="180">
-              <circle cx="90" cy="90" r="75" fill="none" stroke="#1A1A1A" stroke-width="6"/>
-              <circle cx="90" cy="90" r="75" fill="none" stroke="#1D9E75" stroke-width="6"
-                stroke-dasharray="471" stroke-dashoffset="94" stroke-linecap="butt" id="scoreArc"/>
-            </svg>
-            <div class="score-ring-num">
-              <span id="scoreNum">847</span>
-              <span>trust score</span>
-            </div>
-          </div>
-          <div class="score-factors">
-            <div class="score-factor">
-              <span class="score-factor-label">Identity verified</span>
-              <div class="score-factor-bar"><div class="score-factor-fill" style="width:0%" data-w="100%"></div></div>
-              <span class="score-factor-val">100%</span>
-            </div>
-            <div class="score-factor">
-              <span class="score-factor-label">Transaction history</span>
-              <div class="score-factor-bar"><div class="score-factor-fill" style="width:0%" data-w="84%"></div></div>
-              <span class="score-factor-val">84%</span>
-            </div>
-            <div class="score-factor">
-              <span class="score-factor-label">References</span>
-              <div class="score-factor-bar"><div class="score-factor-fill" style="width:0%" data-w="92%"></div></div>
-              <span class="score-factor-val">92%</span>
-            </div>
-            <div class="score-factor">
-              <span class="score-factor-label">Dispute record</span>
-              <div class="score-factor-bar"><div class="score-factor-fill" style="width:0%" data-w="78%"></div></div>
-              <span class="score-factor-val">78%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Revenue / For Business -->
-  <section class="section" id="revenue">
+  <section class="section" id="revenue" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="section-inner">
       <p class="section-label">For businesses</p>
       <h2 class="section-title">Intelligence that<br><em>closes deals.</em></h2>
       <p class="section-body">One API call. Every trust signal you need to make the right decision — in under a second.</p>
       <div class="revenue-grid">
-        <div class="revenue-item animate-in">
-          <h3>Transaction fee</h3>
-          <div class="rate">1.5–3%</div>
-          <p>Every exchange processed earns NEXUM a margin. Small enough to be invisible. Large enough to compound into something extraordinary.</p>
-        </div>
-        <div class="revenue-item animate-in">
-          <h3>Trust subscription</h3>
-          <div class="rate">KES 99</div>
-          <p>Per month, per individual. Verified status is a competitive advantage. The subscription pays for itself the first time it opens a door.</p>
-        </div>
-        <div class="revenue-item animate-in">
-          <h3>API access</h3>
-          <div class="rate">SaaS</div>
-          <p>Landlords, fintechs, employers, SACCOs. Query trust scores programmatically. Tier pricing from KES 2,000 to enterprise.</p>
-        </div>
-        <div class="revenue-item animate-in">
-          <h3>Logistics brokerage</h3>
-          <div class="rate">KES 50–300</div>
-          <p>Per delivery coordinated. Zero vehicles owned. Pure margin on every order routed through the NEXUM coordination layer.</p>
-        </div>
-        <div class="revenue-item animate-in">
-          <h3>Data intelligence</h3>
-          <div class="rate">Enterprise</div>
-          <p>The largest dataset of informal economy behaviour in Kenya. Banks, insurers, and government bodies pay for the intelligence NEXUM accumulates.</p>
-        </div>
+        <div class="revenue-item animate-in"><h3>Transaction fee</h3><div class="rate">1.5–3%</div><p>Every exchange processed earns NEXUM a margin. Small enough to be invisible. Large enough to compound.</p></div>
+        <div class="revenue-item animate-in"><h3>Trust subscription</h3><div class="rate">KES 99</div><p>Per month. Verified status is a competitive advantage that pays for itself the first time it opens a door.</p></div>
+        <div class="revenue-item animate-in"><h3>API access</h3><div class="rate">SaaS</div><p>Landlords, fintechs, employers, SACCOs. Query trust scores programmatically.</p></div>
+        <div class="revenue-item animate-in"><h3>Logistics brokerage</h3><div class="rate">KES 50–300</div><p>Per delivery coordinated. Zero vehicles owned. Pure margin on every order routed through NEXUM.</p></div>
+        <div class="revenue-item animate-in"><h3>Data intelligence</h3><div class="rate">Enterprise</div><p>The largest dataset of informal economy behaviour in Kenya. Banks and institutions pay for this.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="cta-section">
     <h2 class="cta-title">Your trust score<br>starts today.</h2>
-    <p class="cta-sub">Two minutes. Your national ID. Your M-Pesa number.<br>Your market opens.</p>
+    <p class="cta-sub">Two minutes. Your national ID. Your M-Pesa number. Your market opens.</p>
     <button class="btn-primary" onclick="showPage('register')">Build your trust profile →</button>
   </section>
 
@@ -466,7 +266,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════ REGISTRATION ═══ -->
+<!-- ═══ REGISTRATION ═══ -->
 <div id="page-register" class="page">
   <div class="reg-page">
     <div class="reg-card">
@@ -479,10 +279,11 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         <div class="reg-step-dot" id="dot3"></div>
       </div>
 
-      <!-- Step 1: Phone -->
+      <!-- Step 1: Phone + Name -->
       <div class="reg-step active" id="step0">
         <h2 class="reg-title">Enter your<br>phone number.</h2>
-        <p class="reg-sub">Your M-Pesa number is your identity anchor on NEXUM. We will send a verification code.</p>
+        <p class="reg-sub">Your M-Pesa number is your identity anchor on NEXUM.</p>
+        <div class="alert error" id="err0"></div>
         <div class="field">
           <label>M-Pesa number</label>
           <input type="tel" id="phone" placeholder="0712 345 678" maxlength="12">
@@ -492,14 +293,15 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
           <label>Full legal name</label>
           <input type="text" id="fullname" placeholder="As on national ID">
         </div>
-        <button class="reg-btn" onclick="nextStep(1)">Send verification code →</button>
+        <button class="reg-btn" id="btn0" onclick="handleRegister()">Send verification code →</button>
         <button class="reg-back" onclick="showPage('landing')">← Back to home</button>
       </div>
 
       <!-- Step 2: OTP -->
       <div class="reg-step" id="step1">
         <h2 class="reg-title">Enter the<br>verification code.</h2>
-        <p class="reg-sub" id="otpSub">A 6-digit code was sent to your M-Pesa number via SMS.</p>
+        <p class="reg-sub" id="otpSub">A 6-digit code was sent to your M-Pesa number.</p>
+        <div class="alert error" id="err1"></div>
         <div class="field">
           <label>Verification code</label>
           <div class="otp-grid" id="otpGrid">
@@ -510,20 +312,19 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
             <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,4)">
             <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,5)">
           </div>
-          <div class="field-note">Demo: enter any 6 digits</div>
         </div>
-        <button class="reg-btn" id="otpBtn" onclick="nextStep(2)" disabled>Verify →</button>
-        <button class="reg-back" onclick="nextStep(0)">← Back</button>
+        <button class="reg-btn" id="otpBtn" onclick="handleVerifyOtp()" disabled>Verify →</button>
+        <button class="reg-back" onclick="goStep(0)">← Back</button>
       </div>
 
       <!-- Step 3: National ID -->
       <div class="reg-step" id="step2">
         <h2 class="reg-title">Verify your<br>identity.</h2>
-        <p class="reg-sub">Your National ID anchors your NEXUM profile to your real-world identity. This is what makes your trust score credible.</p>
+        <p class="reg-sub">Your National ID anchors your NEXUM profile to your real-world identity.</p>
+        <div class="alert error" id="err2"></div>
         <div class="field">
           <label>National ID number</label>
           <input type="text" id="nationalId" placeholder="12345678">
-          <div class="field-note">Kenya National Identity Card number</div>
         </div>
         <div class="field">
           <label>Date of birth</label>
@@ -534,12 +335,12 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
           <select id="county">
             <option value="">Select county</option>
             <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option>
-            <option>Nakuru</option><option>Eldoret</option><option>Thika</option>
-            <option>Kiambu</option><option>Machakos</option><option>Nyeri</option><option>Other</option>
+            <option>Nakuru</option><option>Eldoret</option><option>Kiambu</option>
+            <option>Machakos</option><option>Nyeri</option><option>Other</option>
           </select>
         </div>
-        <button class="reg-btn" onclick="nextStep(3)">Create my trust profile →</button>
-        <button class="reg-back" onclick="nextStep(1)">← Back</button>
+        <button class="reg-btn" id="btn2" onclick="handleIdentity()">Create my trust profile →</button>
+        <button class="reg-back" onclick="goStep(1)">← Back</button>
       </div>
 
       <!-- Step 4: Success -->
@@ -549,335 +350,419 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h2 class="reg-title" style="text-align:center">Profile created.</h2>
-          <p class="reg-sub" style="text-align:center;margin-bottom:2rem">Your NEXUM trust profile is live. Your initial score has been calculated. Start building your history.</p>
+          <p class="reg-sub" style="text-align:center;margin-bottom:2rem">Your NEXUM trust profile is live. Start building your history.</p>
           <div style="background:var(--black);border:1px solid var(--border);padding:1.5rem;margin-bottom:2rem">
             <div style="font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem">Initial trust score</div>
-            <div style="font-family:var(--serif);font-size:3.5rem;font-weight:300;color:var(--white)">312</div>
-            <div style="font-size:0.6rem;color:var(--text-muted)">Verified · Building</div>
+            <div id="successScore" style="font-family:var(--serif);font-size:3.5rem;font-weight:300;color:var(--white)">—</div>
+            <div id="successNexumId" style="font-size:0.6rem;color:var(--text-muted);margin-top:0.25rem"></div>
           </div>
           <button class="reg-btn" onclick="showPage('dashboard')">Open my dashboard →</button>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ DASHBOARD ═══ -->
+<!-- ═══ DASHBOARD ═══ -->
 <div id="page-dashboard" class="page">
   <div class="app-layout">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">NEXUM</div>
       <nav class="sidebar-nav">
-        <div class="sidebar-item active" onclick="switchTab('overview')">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Overview
+        <div class="sidebar-item active" onclick="switchTab('overview',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Overview
         </div>
-        <div class="sidebar-item" onclick="switchTab('profile')">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          Trust Profile
+        <div class="sidebar-item" onclick="switchTab('profile',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Trust Profile
         </div>
-        <div class="sidebar-item" onclick="switchTab('activity')">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          Activity
+        <div class="sidebar-item" onclick="switchTab('activity',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Activity
         </div>
-        <div class="sidebar-item" onclick="switchTab('api')">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          API Access
+        <div class="sidebar-item" onclick="switchTab('api',this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>API Access
         </div>
       </nav>
       <div class="sidebar-bottom">
         <div class="sidebar-user">
-          <div class="sidebar-avatar">DK</div>
+          <div class="sidebar-avatar" id="sidebarAvatar">—</div>
           <div>
-            <div class="sidebar-name">Davis Kinga</div>
-            <div style="font-size:0.55rem;letter-spacing:0.1em;color:var(--teal)">● Verified</div>
+            <div class="sidebar-name" id="sidebarName">Loading...</div>
+            <div style="font-size:0.55rem;letter-spacing:0.1em;color:var(--teal)" id="sidebarStatus">●</div>
           </div>
         </div>
       </div>
     </aside>
 
-    <!-- Main -->
     <main class="main-content">
-
-      <!-- OVERVIEW TAB -->
+      <!-- OVERVIEW -->
       <div class="tab-content active" id="tab-overview">
         <div class="main-header">
           <div>
-            <h1>Good morning, Davis.</h1>
-            <p>Your trust profile is active · Score updated 2 hours ago</p>
+            <h1 id="dashGreeting">Welcome back.</h1>
+            <p id="dashSubtitle">Your trust profile is active</p>
           </div>
-          <button class="btn-primary" style="font-size:0.6rem;padding:0.7rem 1.5rem" onclick="showPage('register')">Share profile →</button>
         </div>
         <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-card-label">Trust score</div>
-            <div class="metric-card-val">847</div>
-            <div class="metric-card-sub up">↑ +12 this month</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-card-label">Verified transactions</div>
-            <div class="metric-card-val">34</div>
-            <div class="metric-card-sub up">↑ 6 new this week</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-card-label">Profile queries</div>
-            <div class="metric-card-val">12</div>
-            <div class="metric-card-sub">Businesses checked you</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-card-label">References</div>
-            <div class="metric-card-val">7</div>
-            <div class="metric-card-sub up">All verified ✓</div>
-          </div>
+          <div class="metric-card"><div class="metric-card-label">Trust score</div><div class="metric-card-val" id="metricScore">—</div><div class="metric-card-sub up" id="metricTier">—</div></div>
+          <div class="metric-card"><div class="metric-card-label">Verified transactions</div><div class="metric-card-val" id="metricTx">—</div><div class="metric-card-sub">From trust events</div></div>
+          <div class="metric-card"><div class="metric-card-label">Profile queries</div><div class="metric-card-val" id="metricQueries">—</div><div class="metric-card-sub">Businesses checked you</div></div>
+          <div class="metric-card"><div class="metric-card-label">References</div><div class="metric-card-val" id="metricRefs">—</div><div class="metric-card-sub">Verified</div></div>
         </div>
-
-        <!-- Recent activity preview -->
         <div class="activity-table">
-          <div class="activity-table-header">
-            <h3>Recent activity</h3>
-            <span onclick="switchTab('activity')" style="cursor:pointer;color:var(--gold)">View all →</span>
-          </div>
-          <div class="activity-row">
-            <div class="activity-row-info"><h4>Landlord verification query</h4><p>Kilimani Properties Ltd · 2h ago</p></div>
-            <div class="activity-row-type type-query">Query</div>
-            <div class="activity-row-amount neutral">—</div>
-          </div>
-          <div class="activity-row">
-            <div class="activity-row-info"><h4>Payment received</h4><p>Freelance project · Omondi Tech · 1d ago</p></div>
-            <div class="activity-row-type type-payment">Payment</div>
-            <div class="activity-row-amount positive">+KES 15,000</div>
-          </div>
-          <div class="activity-row">
-            <div class="activity-row-info"><h4>Reference added</h4><p>James Mwangi · Former employer · 3d ago</p></div>
-            <div class="activity-row-type type-verification">Reference</div>
-            <div class="activity-row-amount neutral">+4 pts</div>
-          </div>
-          <div class="activity-row">
-            <div class="activity-row-info"><h4>Identity re-verified</h4><p>Annual verification · NEXUM system · 5d ago</p></div>
-            <div class="activity-row-type type-verification">Verification</div>
-            <div class="activity-row-amount neutral">—</div>
-          </div>
+          <div class="activity-table-header"><h3>Recent activity</h3><span onclick="switchTab('activity',null)" style="cursor:pointer;color:var(--gold)">View all →</span></div>
+          <div id="recentActivity"><div style="padding:2rem;color:var(--text-muted);font-size:0.75rem">Loading activity...</div></div>
         </div>
       </div>
 
-      <!-- PROFILE TAB -->
+      <!-- PROFILE -->
       <div class="tab-content" id="tab-profile">
         <div class="main-header">
-          <div>
-            <h1>Trust Profile</h1>
-            <p>NEXUM ID: NXM-KE-2026-00847</p>
-          </div>
-          <button class="btn-secondary" style="font-size:0.6rem;padding:0.7rem 1.5rem">Download badge</button>
+          <div><h1>Trust Profile</h1><p id="profileNexumId">NEXUM ID: —</p></div>
         </div>
         <div class="profile-top">
-          <div class="profile-card scanline">
+          <div class="profile-card">
             <div class="profile-card-label">Trust score breakdown</div>
             <div class="trust-score-big">
-              <div class="num">847</div>
-              <div class="meta">
-                <div class="tier">Gold tier</div>
-                <div class="change">↑ +12 this month</div>
-              </div>
+              <div class="num" id="profileScore">—</div>
+              <div class="meta"><div class="tier" id="profileTier">—</div></div>
             </div>
-            <div class="score-bar-track">
-              <div class="score-bar-fill" style="width:84.7%"></div>
-            </div>
+            <div class="score-bar-track"><div class="score-bar-fill" id="profileScoreBar" style="width:0%"></div></div>
             <div class="score-breakdown">
-              <div class="score-row">
-                <span class="score-row-label">Identity verification</span>
-                <div class="score-row-bar"><div class="score-row-fill" style="width:100%"></div></div>
-                <span class="score-row-val">100%</span>
-              </div>
-              <div class="score-row">
-                <span class="score-row-label">Transaction history</span>
-                <div class="score-row-bar"><div class="score-row-fill" style="width:84%"></div></div>
-                <span class="score-row-val">84%</span>
-              </div>
-              <div class="score-row">
-                <span class="score-row-label">References</span>
-                <div class="score-row-bar"><div class="score-row-fill" style="width:92%"></div></div>
-                <span class="score-row-val">92%</span>
-              </div>
-              <div class="score-row">
-                <span class="score-row-label">Dispute record</span>
-                <div class="score-row-bar"><div class="score-row-fill" style="width:78%"></div></div>
-                <span class="score-row-val">78%</span>
-              </div>
-              <div class="score-row">
-                <span class="score-row-label">Payment reliability</span>
-                <div class="score-row-bar"><div class="score-row-fill" style="width:89%"></div></div>
-                <span class="score-row-val">89%</span>
-              </div>
+              <div class="score-row"><span class="score-row-label">Identity verification</span><div class="score-row-bar"><div class="score-row-fill" id="br-identity" style="width:0%"></div></div><span class="score-row-val" id="bv-identity">0%</span></div>
+              <div class="score-row"><span class="score-row-label">Transaction history</span><div class="score-row-bar"><div class="score-row-fill" id="br-transaction" style="width:0%"></div></div><span class="score-row-val" id="bv-transaction">0%</span></div>
+              <div class="score-row"><span class="score-row-label">References</span><div class="score-row-bar"><div class="score-row-fill" id="br-references" style="width:0%"></div></div><span class="score-row-val" id="bv-references">0%</span></div>
+              <div class="score-row"><span class="score-row-label">Dispute record</span><div class="score-row-bar"><div class="score-row-fill" id="br-dispute" style="width:0%"></div></div><span class="score-row-val" id="bv-dispute">0%</span></div>
+              <div class="score-row"><span class="score-row-label">Payment reliability</span><div class="score-row-bar"><div class="score-row-fill" id="br-payment" style="width:0%"></div></div><span class="score-row-val" id="bv-payment">0%</span></div>
             </div>
           </div>
           <div class="identity-card">
             <div class="profile-card-label">Verified identity</div>
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg>
-              <span>NEXUM Verified</span>
-            </div>
+            <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg><span>NEXUM Verified</span></div>
             <div class="id-fields">
-              <div class="id-field">
-                <span class="id-field-label">Full name</span>
-                <span class="id-field-val">Davis Kinga</span>
-                <span class="id-field-status">✓ Matches national ID</span>
-              </div>
-              <div class="id-field">
-                <span class="id-field-label">M-Pesa number</span>
-                <span class="id-field-val">07** *** 678</span>
-                <span class="id-field-status">✓ Verified via OTP</span>
-              </div>
-              <div class="id-field">
-                <span class="id-field-label">National ID</span>
-                <span class="id-field-val">****5678</span>
-                <span class="id-field-status">✓ KYC verified</span>
-              </div>
-              <div class="id-field">
-                <span class="id-field-label">County</span>
-                <span class="id-field-val">Nairobi</span>
-              </div>
-              <div class="id-field">
-                <span class="id-field-label">Member since</span>
-                <span class="id-field-val">May 2026</span>
-              </div>
+              <div class="id-field"><span class="id-field-label">Full name</span><span class="id-field-val" id="idName">—</span></div>
+              <div class="id-field"><span class="id-field-label">M-Pesa number</span><span class="id-field-val" id="idPhone">—</span></div>
+              <div class="id-field"><span class="id-field-label">County</span><span class="id-field-val" id="idCounty">—</span></div>
+              <div class="id-field"><span class="id-field-label">Member since</span><span class="id-field-val" id="idSince">—</span></div>
+              <div class="id-field"><span class="id-field-label">Verification</span><span class="id-field-status" id="idStatus">—</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ACTIVITY TAB -->
+      <!-- ACTIVITY -->
       <div class="tab-content" id="tab-activity">
-        <div class="main-header">
-          <div><h1>Activity</h1><p>All transactions, queries and events on your profile</p></div>
-        </div>
+        <div class="main-header"><div><h1>Activity</h1><p>All events on your profile</p></div></div>
         <div class="activity-table">
-          <div class="activity-table-header">
-            <h3>Full activity log</h3>
-            <span style="color:var(--text-muted)">Last 30 days</span>
-          </div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Landlord verification query</h4><p>Kilimani Properties Ltd · May 16, 2026</p></div><div class="activity-row-type type-query">Query</div><div class="activity-row-amount neutral">—</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Payment received — freelance</h4><p>Omondi Tech Ltd · May 15, 2026</p></div><div class="activity-row-type type-payment">Payment</div><div class="activity-row-amount positive">+KES 15,000</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Reference added</h4><p>James Mwangi · May 13, 2026</p></div><div class="activity-row-type type-verification">Reference</div><div class="activity-row-amount neutral">+4 pts</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Annual identity re-verification</h4><p>NEXUM system · May 11, 2026</p></div><div class="activity-row-type type-verification">Verification</div><div class="activity-row-amount neutral">—</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Employer verification query</h4><p>Safal Group · May 10, 2026</p></div><div class="activity-row-type type-query">Query</div><div class="activity-row-amount neutral">—</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Payment received — rent</h4><p>Personal transaction · May 4, 2026</p></div><div class="activity-row-type type-payment">Payment</div><div class="activity-row-amount positive">+KES 32,000</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Reference added</h4><p>Sarah Njoki · May 1, 2026</p></div><div class="activity-row-type type-verification">Reference</div><div class="activity-row-amount neutral">+3 pts</div></div>
-          <div class="activity-row"><div class="activity-row-info"><h4>Profile viewed</h4><p>Anonymous business · Apr 28, 2026</p></div><div class="activity-row-type type-query">Query</div><div class="activity-row-amount neutral">—</div></div>
+          <div class="activity-table-header"><h3>Full activity log</h3></div>
+          <div id="fullActivity"><div style="padding:2rem;color:var(--text-muted);font-size:0.75rem">Loading...</div></div>
         </div>
       </div>
 
-      <!-- API TAB -->
+      <!-- API -->
       <div class="tab-content" id="tab-api">
-        <div class="main-header">
-          <div><h1>API Access</h1><p>Query trust scores programmatically — for your business</p></div>
-          <button class="btn-primary" style="font-size:0.6rem;padding:0.7rem 1.5rem">Generate API key</button>
-        </div>
-        <div class="metrics-grid" style="margin-bottom:2rem">
-          <div class="metric-card"><div class="metric-card-label">Plan</div><div class="metric-card-val" style="font-size:1.5rem">Starter</div><div class="metric-card-sub">500 queries/mo</div></div>
-          <div class="metric-card"><div class="metric-card-label">Queries used</div><div class="metric-card-val">47</div><div class="metric-card-sub">453 remaining</div></div>
-          <div class="metric-card"><div class="metric-card-label">Monthly cost</div><div class="metric-card-val" style="font-size:1.5rem">KES 2K</div><div class="metric-card-sub">Next billing May 30</div></div>
-        </div>
+        <div class="main-header"><div><h1>API Access</h1><p>Query trust scores for your business</p></div></div>
         <div class="activity-table">
-          <div class="activity-table-header"><h3>API endpoint</h3></div>
-          <div style="padding:2rem;font-size:0.75rem;line-height:2">
-            <div style="color:var(--text-muted);margin-bottom:0.5rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase">Query trust score</div>
-            <div style="background:var(--black);border:1px solid var(--border);padding:1.25rem;font-family:var(--mono);font-size:0.72rem;color:var(--text-dim)">
-              <span style="color:var(--teal)">GET</span> https://api.nexum.africa/v1/trust/<span style="color:var(--gold)">{phone_number}</span><br><br>
-              <span style="color:var(--text-muted)">Authorization: Bearer </span><span style="color:var(--gold)">nxm_live_xxxxxxxxxxxxxxxx</span><br><br>
-              <span style="color:var(--text-muted)">Response:</span><br>
-              {<br>
-              &nbsp;&nbsp;<span style="color:var(--teal)">"nexum_id"</span>: <span style="color:var(--gold)">"NXM-KE-2026-00847"</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--teal)">"trust_score"</span>: <span style="color:var(--white)">847</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--teal)">"tier"</span>: <span style="color:var(--gold)">"gold"</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--teal)">"verified"</span>: <span style="color:var(--teal)">true</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--teal)">"identity_confirmed"</span>: <span style="color:var(--teal)">true</span><br>
-              }
+          <div class="activity-table-header"><h3>Your API endpoint</h3></div>
+          <div style="padding:2rem">
+            <div style="font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem">Query trust score</div>
+            <div style="background:var(--black);border:1px solid var(--border);padding:1.25rem;font-size:0.72rem;color:var(--text-dim);line-height:2">
+              <span style="color:var(--teal)">GET</span> https://nexum-api-p1bk.onrender.com/api/v1/trust/<span style="color:var(--gold)">{phone}</span><br>
+              <span style="color:var(--text-muted)">x-api-key: </span><span style="color:var(--gold)">your_api_key</span>
             </div>
+            <div style="margin-top:1.5rem">
+              <button class="btn-primary" style="font-size:0.6rem;padding:0.7rem 1.5rem" onclick="generateApiKey()">Generate API key →</button>
+            </div>
+            <div id="apiKeyResult" style="margin-top:1rem"></div>
           </div>
         </div>
       </div>
-
     </main>
   </div>
 </div>
 
 <script>
-// ─── LOADING
-window.addEventListener('load',()=>{
-  setTimeout(()=>{document.getElementById('loading').classList.add('hidden')},1800);
-});
+// ═══════════════════════════════════════════════════
+// NEXUM — Frontend API Client
+// ═══════════════════════════════════════════════════
 
-// ─── NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
-});
+const API = 'https://nexum-api-p1bk.onrender.com/api/v1';
 
-// ─── PAGE ROUTING
-function showPage(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+page).classList.add('active');
-  window.scrollTo(0,0);
-  if(page==='dashboard') initDashboard();
+// ─── TOKEN MANAGEMENT ────────────────────────────
+const auth = {
+  save: (token, user) => {
+    localStorage.setItem('nxm_token', token);
+    localStorage.setItem('nxm_user', JSON.stringify(user));
+  },
+  token: () => localStorage.getItem('nxm_token'),
+  user: () => JSON.parse(localStorage.getItem('nxm_user') || 'null'),
+  clear: () => { localStorage.removeItem('nxm_token'); localStorage.removeItem('nxm_user'); },
+  isLoggedIn: () => !!localStorage.getItem('nxm_token'),
+};
+
+// ─── API HELPER ───────────────────────────────────
+async function api(path, options = {}) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (auth.token()) headers['Authorization'] = `Bearer ${auth.token()}`;
+  if (options.apiKey) headers['x-api-key'] = options.apiKey;
+  const res = await fetch(`${API}${path}`, { ...options, headers });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Request failed');
+  return data;
 }
 
-function scrollToSection(id){
-  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+// ─── LOADING ──────────────────────────────────────
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loading').classList.add('hidden'), 1800);
+});
+
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ─── PAGE ROUTING ─────────────────────────────────
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo(0, 0);
+  if (page === 'dashboard') loadDashboard();
 }
 
-// ─── ANIMATE ON SCROLL
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
-},{threshold:0.1});
-document.querySelectorAll('.animate-in').forEach(el=>observer.observe(el));
+function requireAuth() {
+  if (auth.isLoggedIn()) showPage('dashboard');
+  else showPage('register');
+}
 
-// Animate score bars when visible
-const scoreObs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('[data-w]').forEach(bar=>{bar.style.width=bar.dataset.w});
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─── ANIMATE ON SCROLL ────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+// ─── REGISTRATION ─────────────────────────────────
+let regPhone = '';
+
+function goStep(step) {
+  document.querySelectorAll('.reg-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + step).classList.add('active');
+  document.querySelectorAll('.reg-step-dot').forEach((d, i) => {
+    d.classList.toggle('done', i < step);
+    d.classList.toggle('active', i === step);
+  });
+  document.getElementById('progressFill').style.width = ((step + 1) / 4 * 100) + '%';
+}
+
+function showError(id, msg) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+function clearError(id) {
+  const el = document.getElementById(id);
+  el.textContent = '';
+  el.classList.remove('show');
+}
+
+function setLoading(btnId, loading, text) {
+  const btn = document.getElementById(btnId);
+  btn.disabled = loading;
+  btn.innerHTML = loading ? `<span class="spinner"></span>${text}` : text;
+}
+
+// Step 1 — Register
+async function handleRegister() {
+  clearError('err0');
+  const phone = document.getElementById('phone').value.trim();
+  const full_name = document.getElementById('fullname').value.trim();
+  if (!phone || !full_name) return showError('err0', 'Please fill in both fields.');
+  if (!/^07\d{8}$/.test(phone.replace(/\s/g, ''))) return showError('err0', 'Enter a valid Safaricom number e.g. 0712345678');
+
+  setLoading('btn0', true, 'Sending code...');
+  try {
+    regPhone = phone.replace(/\s/g, '');
+    await api('/auth/register', { method: 'POST', body: JSON.stringify({ phone: regPhone, full_name }) });
+    document.getElementById('otpSub').textContent = `A 6-digit code was sent to ${regPhone}.`;
+    goStep(1);
+  } catch (err) {
+    // If already registered, try login flow
+    if (err.message.includes('already registered')) {
+      try {
+        await api('/auth/login', { method: 'POST', body: JSON.stringify({ phone: regPhone }) });
+        document.getElementById('otpSub').textContent = `Welcome back. A code was sent to ${regPhone}.`;
+        goStep(1);
+      } catch (e) { showError('err0', e.message); }
+    } else {
+      showError('err0', err.message);
     }
-  });
-},{threshold:0.3});
-document.querySelectorAll('.score-demo').forEach(el=>scoreObs.observe(el));
-
-// ─── REGISTRATION FLOW
-let currentStep=0;
-function nextStep(step){
-  document.querySelectorAll('.reg-step').forEach(s=>s.classList.remove('active'));
-  document.getElementById('step'+step).classList.add('active');
-  document.querySelectorAll('.reg-step-dot').forEach((d,i)=>{
-    d.classList.toggle('done',i<step);
-    d.classList.toggle('active',i===step);
-  });
-  document.getElementById('progressFill').style.width=((step+1)/4*100)+'%';
-  currentStep=step;
+  } finally {
+    setLoading('btn0', false, 'Send verification code →');
+  }
 }
 
-// OTP input
-function otpNext(el,idx){
-  const inputs=document.querySelectorAll('.otp-input');
-  if(el.value.length===1&&idx<5) inputs[idx+1].focus();
-  const filled=Array.from(inputs).every(i=>i.value.length===1);
-  document.getElementById('otpBtn').disabled=!filled;
+// Step 2 — Verify OTP
+function otpNext(el, idx) {
+  const inputs = document.querySelectorAll('.otp-input');
+  if (el.value.length === 1 && idx < 5) inputs[idx + 1].focus();
+  const filled = Array.from(inputs).every(i => i.value.length === 1);
+  document.getElementById('otpBtn').disabled = !filled;
 }
 
-// ─── DASHBOARD TABS
-function switchTab(tab){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.sidebar-item').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  event.currentTarget.classList.add('active');
+async function handleVerifyOtp() {
+  clearError('err1');
+  const otp = Array.from(document.querySelectorAll('.otp-input')).map(i => i.value).join('');
+  setLoading('otpBtn', true, 'Verifying...');
+  try {
+    const res = await api('/auth/verify-otp', { method: 'POST', body: JSON.stringify({ phone: regPhone, otp }) });
+    auth.save(res.token, res.user);
+    goStep(2);
+  } catch (err) {
+    showError('err1', err.message);
+  } finally {
+    setLoading('otpBtn', false, 'Verify →');
+  }
 }
 
-function initDashboard(){
-  // Animate score rows on profile
-  setTimeout(()=>{
-    document.querySelectorAll('.score-row-fill').forEach(el=>{
-      el.style.transition='width 1.2s ease';
+// Step 3 — Identity
+async function handleIdentity() {
+  clearError('err2');
+  const national_id = document.getElementById('nationalId').value.trim();
+  const date_of_birth = document.getElementById('dob').value;
+  const county = document.getElementById('county').value;
+  if (!national_id || !date_of_birth || !county) return showError('err2', 'All fields are required.');
+
+  setLoading('btn2', true, 'Verifying identity...');
+  try {
+    await api('/auth/identity', { method: 'POST', body: JSON.stringify({ national_id, date_of_birth, county }) });
+    const profile = await api('/profile/me');
+    document.getElementById('successScore').textContent = profile.trust.score;
+    document.getElementById('successNexumId').textContent = profile.nexum_id + ' · ' + profile.trust.tier;
+    goStep(3);
+  } catch (err) {
+    showError('err2', err.message);
+  } finally {
+    setLoading('btn2', false, 'Create my trust profile →');
+  }
+}
+
+// ─── DASHBOARD ────────────────────────────────────
+async function loadDashboard() {
+  if (!auth.isLoggedIn()) { showPage('register'); return; }
+  try {
+    const profile = await api('/profile/me');
+    const user = profile;
+    const trust = profile.trust;
+
+    // Sidebar
+    const initials = user.full_name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+    document.getElementById('sidebarAvatar').textContent = initials;
+    document.getElementById('sidebarName').textContent = user.full_name;
+    document.getElementById('sidebarStatus').textContent = '● ' + (user.is_verified ? 'Verified' : 'Unverified');
+
+    // Header
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+    document.getElementById('dashGreeting').textContent = `${greeting}, ${user.full_name.split(' ')[0]}.`;
+    document.getElementById('dashSubtitle').textContent = `${user.nexum_id} · Score updated just now`;
+
+    // Metrics
+    document.getElementById('metricScore').textContent = trust.score;
+    document.getElementById('metricTier').textContent = trust.tier.charAt(0).toUpperCase() + trust.tier.slice(1) + ' tier';
+    document.getElementById('metricRefs').textContent = profile.stats.verified_references;
+    document.getElementById('metricQueries').textContent = profile.stats.profile_queries;
+
+    // Profile tab
+    document.getElementById('profileNexumId').textContent = 'NEXUM ID: ' + user.nexum_id;
+    document.getElementById('profileScore').textContent = trust.score;
+    document.getElementById('profileTier').textContent = trust.tier.charAt(0).toUpperCase() + trust.tier.slice(1) + ' tier';
+    document.getElementById('profileScoreBar').style.width = (trust.score / 10) + '%';
+    document.getElementById('idName').textContent = user.full_name;
+    document.getElementById('idPhone').textContent = user.phone;
+    document.getElementById('idCounty').textContent = user.county || '—';
+    document.getElementById('idSince').textContent = new Date(user.member_since).toLocaleDateString('en-KE', { year: 'numeric', month: 'long' });
+    document.getElementById('idStatus').textContent = user.verification_tier === 'verified' ? '✓ Fully verified' : '○ Basic verified';
+
+    // Score breakdown bars
+    const b = trust.breakdown;
+    const bars = { identity: b.identity_pct, transaction: b.transaction_pct, references: b.references_pct, dispute: b.dispute_pct, payment: b.payment_pct };
+    Object.entries(bars).forEach(([k, v]) => {
+      const bar = document.getElementById('br-' + k);
+      const val = document.getElementById('bv-' + k);
+      if (bar) setTimeout(() => { bar.style.width = v + '%'; }, 300);
+      if (val) val.textContent = v + '%';
     });
-  },100);
+
+    // Transactions count from trust events
+    const txCount = Math.round((b.transaction_pct / 100) * 37);
+    document.getElementById('metricTx').textContent = txCount;
+
+    // Recent activity
+    renderActivity(profile.recent_activity, 'recentActivity', 4);
+    renderActivity(profile.recent_activity, 'fullActivity', 20);
+
+  } catch (err) {
+    console.error('[NEXUM] Dashboard load error:', err.message);
+    if (err.message.includes('Invalid') || err.message.includes('expired')) {
+      auth.clear();
+      showPage('register');
+    }
+  }
+}
+
+function renderActivity(events, containerId, limit) {
+  const container = document.getElementById(containerId);
+  if (!events || events.length === 0) {
+    container.innerHTML = '<div style="padding:2rem;color:var(--text-muted);font-size:0.75rem">No activity yet. Complete your profile to start building your score.</div>';
+    return;
+  }
+  const typeMap = {
+    phone_verified:        { label: 'Phone verified',        cls: 'type-verification' },
+    national_id_verified:  { label: 'Identity verified',     cls: 'type-verification' },
+    transaction_completed: { label: 'Transaction completed', cls: 'type-payment' },
+    transaction_disputed:  { label: 'Dispute raised',        cls: 'type-query' },
+    reference_added:       { label: 'Reference added',       cls: 'type-verification' },
+    profile_queried:       { label: 'Profile queried',       cls: 'type-query' },
+    annual_reverification: { label: 'Annual re-verification',cls: 'type-verification' },
+  };
+  container.innerHTML = events.slice(0, limit).map(e => {
+    const t = typeMap[e.event] || { label: e.event, cls: 'type-verification' };
+    const date = new Date(e.at).toLocaleDateString('en-KE', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    return `
+      <div class="activity-row">
+        <div class="activity-row-info"><h4>${t.label}</h4><p>${e.source} · ${date}</p></div>
+        <div class="activity-row-type ${t.cls}">${t.cls.replace('type-', '')}</div>
+        <div class="activity-row-amount neutral">—</div>
+      </div>`;
+  }).join('');
+}
+
+// ─── API KEY GENERATION ───────────────────────────
+async function generateApiKey() {
+  const business_name = prompt('Your business name:');
+  const contact_email = prompt('Your business email:');
+  if (!business_name || !contact_email) return;
+  try {
+    const res = await api('/api/keys', { method: 'POST', body: JSON.stringify({ business_name, contact_email, plan: 'starter' }) });
+    document.getElementById('apiKeyResult').innerHTML = `
+      <div style="background:var(--black);border:1px solid var(--teal);padding:1.25rem;margin-top:1rem">
+        <div style="font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem">API Key — Save this now. It will not be shown again.</div>
+        <div style="font-size:0.75rem;color:var(--white);word-break:break-all">${res.api_key}</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.5rem">${res.queries_limit} queries/month · KES ${res.billing_kes_per_month}/month</div>
+      </div>`;
+  } catch (err) {
+    document.getElementById('apiKeyResult').innerHTML = `<div style="color:var(--red);font-size:0.75rem;margin-top:0.5rem">${err.message}</div>`;
+  }
+}
+
+// ─── DASHBOARD TABS ───────────────────────────────
+function switchTab(tab, el) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (el) el.classList.add('active');
 }
 </script>
 </body>
