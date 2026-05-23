@@ -69,7 +69,6 @@ nav.scrolled{background:rgba(10,10,10,0.95);border-color:var(--border);backdrop-
 footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:var(--serif);font-size:1.25rem;font-weight:300;letter-spacing:0.2em;color:var(--text-dim)}
 .footer-copy{font-size:0.6rem;letter-spacing:0.15em;color:var(--text-muted)}
-/* REGISTRATION */
 .reg-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem;background:var(--black);position:relative}
 .reg-page::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.2}
 .reg-card{background:var(--surface);border:1px solid var(--border);padding:3.5rem;max-width:480px;width:100%;position:relative;z-index:1}
@@ -89,6 +88,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .field input:focus,.field select:focus{border-color:var(--gold)}
 .field input::placeholder{color:var(--text-muted)}
 .field-note{font-size:0.62rem;color:var(--text-muted);margin-top:0.4rem;letter-spacing:0.05em}
+.phone-row{display:grid;grid-template-columns:140px 1fr;gap:0.5rem}
 .reg-btn{width:100%;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
 .reg-btn:hover{background:var(--white)}.reg-btn:disabled{background:var(--border2);color:var(--text-muted);cursor:not-allowed}
 .reg-back{background:transparent;border:none;color:var(--text-dim);font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;cursor:pointer;margin-top:1rem;display:block;width:100%;text-align:center;padding:0.5rem;transition:color 0.2s}
@@ -99,12 +99,10 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .otp-input:focus{border-color:var(--gold)}
 .success-icon{width:64px;height:64px;border:1px solid var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
 .success-icon svg{stroke:var(--teal)}
-/* ALERT / ERROR */
 .alert{padding:0.85rem 1rem;font-size:0.72rem;margin-bottom:1rem;border:1px solid;display:none}
 .alert.error{background:rgba(226,75,74,0.1);border-color:var(--red);color:var(--red)}
 .alert.success{background:rgba(29,158,117,0.1);border-color:var(--teal);color:var(--teal)}
 .alert.show{display:block}
-/* DASHBOARD */
 .app-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
 @media(max-width:900px){.app-layout{grid-template-columns:1fr}}
 .sidebar{background:var(--surface);border-right:1px solid var(--border);padding:2rem 1.5rem;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
@@ -149,7 +147,6 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 .trust-score-big .num{font-family:var(--serif);font-size:5rem;font-weight:300;color:var(--white);line-height:1}
 .trust-score-big .meta{padding-bottom:0.75rem}
 .trust-score-big .meta .tier{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.25rem}
-.trust-score-big .meta .change{font-size:0.7rem;color:var(--text-dim)}
 .score-bar-track{height:3px;background:var(--border);margin-bottom:1.5rem}
 .score-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width 1.5s ease}
 .score-breakdown{display:flex;flex-direction:column;gap:0.75rem}
@@ -210,7 +207,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">The new economic infrastructure · Kenya · Est. 2026</p>
+      <p class="hero-eyebrow">The new economic infrastructure · Africa · Est. 2026</p>
       <h1 class="hero-title">Value,<br>without <em>friction.</em></h1>
       <p class="hero-sub">NEXUM removes every barrier between a person and the value they deserve. Trust. Payments. Logistics. Infrastructure. Eliminated.</p>
       <div class="hero-actions">
@@ -232,7 +229,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
       <p class="section-body">Africa's informal economy loses trillions every year not because demand doesn't exist — but because four invisible frictions kill every transaction before it completes.</p>
       <div class="frictions">
         <div class="friction-item animate-in"><div class="friction-num">01</div><div class="friction-name">Trust friction</div><div class="friction-solved">↳ Verified identity layer</div><p class="friction-desc">Every landlord, employer, and buyer needs to know who they're dealing with. NEXUM gives every person a trust profile backed by real data.</p></div>
-        <div class="friction-item animate-in"><div class="friction-num">02</div><div class="friction-name">Payment friction</div><div class="friction-solved">↳ Native M-Pesa + card rails</div><p class="friction-desc">One tap. STK push. The moment of decision and the moment of payment become the same moment.</p></div>
+        <div class="friction-item animate-in"><div class="friction-num">02</div><div class="friction-name">Payment friction</div><div class="friction-solved">↳ Native mobile money + card rails</div><p class="friction-desc">One tap. The moment of decision and the moment of payment become the same moment across every African market.</p></div>
         <div class="friction-item animate-in"><div class="friction-num">03</div><div class="friction-name">Logistics friction</div><div class="friction-solved">↳ Last-mile coordination</div><p class="friction-desc">NEXUM coordinates delivery through a verified network of riders without owning a single vehicle.</p></div>
         <div class="friction-item animate-in"><div class="friction-num">04</div><div class="friction-name">Infrastructure friction</div><div class="friction-solved">↳ Digital operating layer</div><p class="friction-desc">The storefront, inventory, order tracking — the infrastructure informal sellers never had, as a service.</p></div>
       </div>
@@ -249,14 +246,14 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         <div class="revenue-item animate-in"><h3>Trust subscription</h3><div class="rate">KES 99</div><p>Per month. Verified status is a competitive advantage that pays for itself the first time it opens a door.</p></div>
         <div class="revenue-item animate-in"><h3>API access</h3><div class="rate">SaaS</div><p>Landlords, fintechs, employers, SACCOs. Query trust scores programmatically.</p></div>
         <div class="revenue-item animate-in"><h3>Logistics brokerage</h3><div class="rate">KES 50–300</div><p>Per delivery coordinated. Zero vehicles owned. Pure margin on every order routed through NEXUM.</p></div>
-        <div class="revenue-item animate-in"><h3>Data intelligence</h3><div class="rate">Enterprise</div><p>The largest dataset of informal economy behaviour in Kenya. Banks and institutions pay for this.</p></div>
+        <div class="revenue-item animate-in"><h3>Data intelligence</h3><div class="rate">Enterprise</div><p>The largest dataset of informal economy behaviour in Africa. Banks and institutions pay for this.</p></div>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <h2 class="cta-title">Your trust score<br>starts today.</h2>
-    <p class="cta-sub">Two minutes. Your national ID. Your M-Pesa number. Your market opens.</p>
+    <p class="cta-sub">Two minutes. Your national ID. Your phone number. Your market opens.</p>
     <button class="btn-primary" onclick="showPage('register')">Build your trust profile →</button>
   </section>
 
@@ -279,19 +276,36 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         <div class="reg-step-dot" id="dot3"></div>
       </div>
 
-      <!-- Step 1: Phone + Name -->
+      <!-- Step 1: Details -->
       <div class="reg-step active" id="step0">
-        <h2 class="reg-title">Enter your<br>phone number.</h2>
-        <p class="reg-sub">Your M-Pesa number is your identity anchor on NEXUM.</p>
+        <h2 class="reg-title">Create your<br>trust profile.</h2>
+        <p class="reg-sub">Your phone number is your identity anchor on NEXUM. A verification code will be sent to your email.</p>
         <div class="alert error" id="err0"></div>
         <div class="field">
-          <label>M-Pesa number</label>
-          <input type="tel" id="phone" placeholder="0712 345 678" maxlength="12">
-          <div class="field-note">Safaricom M-Pesa registered number only</div>
+          <label>Country</label>
+          <select id="country" onchange="updatePhonePlaceholder()">
+            <option value="KE">🇰🇪 Kenya (+254)</option>
+            <option value="TZ">🇹🇿 Tanzania (+255)</option>
+            <option value="UG">🇺🇬 Uganda (+256)</option>
+            <option value="RW">🇷🇼 Rwanda (+250)</option>
+            <option value="ET">🇪🇹 Ethiopia (+251)</option>
+            <option value="NG">🇳🇬 Nigeria (+234)</option>
+            <option value="GH">🇬🇭 Ghana (+233)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Phone number</label>
+          <input type="tel" id="phone" placeholder="0712 345 678">
+          <div class="field-note" id="phoneNote">Any network — Safaricom, Airtel, Telkom</div>
         </div>
         <div class="field">
           <label>Full legal name</label>
           <input type="text" id="fullname" placeholder="As on national ID">
+        </div>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" id="email" placeholder="you@example.com">
+          <div class="field-note">Your verification code will be sent here</div>
         </div>
         <button class="reg-btn" id="btn0" onclick="handleRegister()">Send verification code →</button>
         <button class="reg-back" onclick="showPage('landing')">← Back to home</button>
@@ -300,11 +314,11 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
       <!-- Step 2: OTP -->
       <div class="reg-step" id="step1">
         <h2 class="reg-title">Enter the<br>verification code.</h2>
-        <p class="reg-sub" id="otpSub">A 6-digit code was sent to your M-Pesa number.</p>
+        <p class="reg-sub" id="otpSub">A 6-digit code was sent to your email.</p>
         <div class="alert error" id="err1"></div>
         <div class="field">
           <label>Verification code</label>
-          <div class="otp-grid" id="otpGrid">
+          <div class="otp-grid">
             <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,0)">
             <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,1)">
             <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,2)">
@@ -320,7 +334,7 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
       <!-- Step 3: National ID -->
       <div class="reg-step" id="step2">
         <h2 class="reg-title">Verify your<br>identity.</h2>
-        <p class="reg-sub">Your National ID anchors your NEXUM profile to your real-world identity.</p>
+        <p class="reg-sub">Your national ID anchors your NEXUM profile to your real-world identity.</p>
         <div class="alert error" id="err2"></div>
         <div class="field">
           <label>National ID number</label>
@@ -331,13 +345,8 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
           <input type="date" id="dob">
         </div>
         <div class="field">
-          <label>County of residence</label>
-          <select id="county">
-            <option value="">Select county</option>
-            <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option>
-            <option>Nakuru</option><option>Eldoret</option><option>Kiambu</option>
-            <option>Machakos</option><option>Nyeri</option><option>Other</option>
-          </select>
+          <label>Region / County</label>
+          <input type="text" id="county" placeholder="e.g. Nairobi, Lagos, Kampala">
         </div>
         <button class="reg-btn" id="btn2" onclick="handleIdentity()">Create my trust profile →</button>
         <button class="reg-back" onclick="goStep(1)">← Back</button>
@@ -394,13 +403,9 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
     </aside>
 
     <main class="main-content">
-      <!-- OVERVIEW -->
       <div class="tab-content active" id="tab-overview">
         <div class="main-header">
-          <div>
-            <h1 id="dashGreeting">Welcome back.</h1>
-            <p id="dashSubtitle">Your trust profile is active</p>
-          </div>
+          <div><h1 id="dashGreeting">Welcome back.</h1><p id="dashSubtitle">Your trust profile is active</p></div>
         </div>
         <div class="metrics-grid">
           <div class="metric-card"><div class="metric-card-label">Trust score</div><div class="metric-card-val" id="metricScore">—</div><div class="metric-card-sub up" id="metricTier">—</div></div>
@@ -414,11 +419,8 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         </div>
       </div>
 
-      <!-- PROFILE -->
       <div class="tab-content" id="tab-profile">
-        <div class="main-header">
-          <div><h1>Trust Profile</h1><p id="profileNexumId">NEXUM ID: —</p></div>
-        </div>
+        <div class="main-header"><div><h1>Trust Profile</h1><p id="profileNexumId">NEXUM ID: —</p></div></div>
         <div class="profile-top">
           <div class="profile-card">
             <div class="profile-card-label">Trust score breakdown</div>
@@ -440,8 +442,8 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
             <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg><span>NEXUM Verified</span></div>
             <div class="id-fields">
               <div class="id-field"><span class="id-field-label">Full name</span><span class="id-field-val" id="idName">—</span></div>
-              <div class="id-field"><span class="id-field-label">M-Pesa number</span><span class="id-field-val" id="idPhone">—</span></div>
-              <div class="id-field"><span class="id-field-label">County</span><span class="id-field-val" id="idCounty">—</span></div>
+              <div class="id-field"><span class="id-field-label">Phone number</span><span class="id-field-val" id="idPhone">—</span></div>
+              <div class="id-field"><span class="id-field-label">Region</span><span class="id-field-val" id="idCounty">—</span></div>
               <div class="id-field"><span class="id-field-label">Member since</span><span class="id-field-val" id="idSince">—</span></div>
               <div class="id-field"><span class="id-field-label">Verification</span><span class="id-field-status" id="idStatus">—</span></div>
             </div>
@@ -449,7 +451,6 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         </div>
       </div>
 
-      <!-- ACTIVITY -->
       <div class="tab-content" id="tab-activity">
         <div class="main-header"><div><h1>Activity</h1><p>All events on your profile</p></div></div>
         <div class="activity-table">
@@ -458,7 +459,6 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
         </div>
       </div>
 
-      <!-- API -->
       <div class="tab-content" id="tab-api">
         <div class="main-header"><div><h1>API Access</h1><p>Query trust scores for your business</p></div></div>
         <div class="activity-table">
@@ -482,21 +482,47 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--border);display:flex;align
 
 <script>
 // ═══════════════════════════════════════════════════
-// NEXUM — Frontend API Client
+// NEXUM — Frontend
 // ═══════════════════════════════════════════════════
 
 const API = 'https://nexum-api-p1bk.onrender.com/api/v1';
 
-// ─── TOKEN MANAGEMENT ────────────────────────────
+const COUNTRIES = {
+  KE: { dial: '+254', placeholder: '0712 345 678', note: 'Any network — Safaricom, Airtel, Telkom' },
+  TZ: { dial: '+255', placeholder: '0712 345 678', note: 'Any network — Vodacom, Airtel, Tigo' },
+  UG: { dial: '+256', placeholder: '0712 345 678', note: 'Any network — MTN, Airtel' },
+  RW: { dial: '+250', placeholder: '0712 345 678', note: 'Any network — MTN, Airtel' },
+  ET: { dial: '+251', placeholder: '0912 345 678', note: 'Any network — Ethio Telecom, Safaricom ET' },
+  NG: { dial: '+234', placeholder: '0801 234 5678', note: 'Any network — MTN, Airtel, Glo, 9mobile' },
+  GH: { dial: '+233', placeholder: '024 123 4567', note: 'Any network — MTN, Vodafone, AirtelTigo' },
+};
+
+function updatePhonePlaceholder() {
+  const country = document.getElementById('country').value;
+  const c = COUNTRIES[country];
+  document.getElementById('phone').placeholder = c.placeholder;
+  document.getElementById('phoneNote').textContent = c.note;
+}
+
+// ─── AUTH ─────────────────────────────────────────
+const TOKEN_TTL_MS = 8 * 60 * 60 * 1000;
 const auth = {
   save: (token, user) => {
-    localStorage.setItem('nxm_token', token);
-    localStorage.setItem('nxm_user', JSON.stringify(user));
+    sessionStorage.setItem('nxm_session', JSON.stringify({ token, user, exp: Date.now() + TOKEN_TTL_MS }));
   },
-  token: () => localStorage.getItem('nxm_token'),
-  user: () => JSON.parse(localStorage.getItem('nxm_user') || 'null'),
-  clear: () => { localStorage.removeItem('nxm_token'); localStorage.removeItem('nxm_user'); },
-  isLoggedIn: () => !!localStorage.getItem('nxm_token'),
+  _get: () => {
+    try {
+      const raw = sessionStorage.getItem('nxm_session');
+      if (!raw) return null;
+      const p = JSON.parse(raw);
+      if (Date.now() > p.exp) { sessionStorage.removeItem('nxm_session'); return null; }
+      return p;
+    } catch { return null; }
+  },
+  token: () => auth._get()?.token || null,
+  user: () => auth._get()?.user || null,
+  clear: () => sessionStorage.removeItem('nxm_session'),
+  isLoggedIn: () => !!auth._get(),
 };
 
 // ─── API HELPER ───────────────────────────────────
@@ -504,22 +530,32 @@ async function api(path, options = {}) {
   const headers = { 'Content-Type': 'application/json' };
   if (auth.token()) headers['Authorization'] = `Bearer ${auth.token()}`;
   if (options.apiKey) headers['x-api-key'] = options.apiKey;
-  const res = await fetch(`${API}${path}`, { ...options, headers });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Request failed');
-  return data;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const res = await fetch(`${API}${path}`, { ...options, headers, signal: controller.signal });
+    clearTimeout(timeout);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Request failed');
+    return data;
+  } catch (err) {
+    clearTimeout(timeout);
+    if (err.name === 'AbortError') throw new Error('Request timed out. The server may be waking up — please try again in a moment.');
+    throw err;
+  }
 }
 
-// ─── LOADING ──────────────────────────────────────
+// ─── INIT ─────────────────────────────────────────
 window.addEventListener('load', () => {
   setTimeout(() => document.getElementById('loading').classList.add('hidden'), 1800);
+  fetch(`${API}/health`, { method: 'GET' }).catch(() => {});
 });
 
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ─── PAGE ROUTING ─────────────────────────────────
+// ─── ROUTING ──────────────────────────────────────
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
@@ -536,7 +572,6 @@ function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
-// ─── ANIMATE ON SCROLL ────────────────────────────
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
@@ -544,6 +579,8 @@ document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
 // ─── REGISTRATION ─────────────────────────────────
 let regPhone = '';
+let regEmail = '';
+let regCountry = 'KE';
 
 function goStep(step) {
   document.querySelectorAll('.reg-step').forEach(s => s.classList.remove('active'));
@@ -573,26 +610,29 @@ function setLoading(btnId, loading, text) {
   btn.innerHTML = loading ? `<span class="spinner"></span>${text}` : text;
 }
 
-// Step 1 — Register
 async function handleRegister() {
   clearError('err0');
-  const phone = document.getElementById('phone').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
   const full_name = document.getElementById('fullname').value.trim();
-  if (!phone || !full_name) return showError('err0', 'Please fill in both fields.');
-  if (!/^07\d{8}$/.test(phone.replace(/\s/g, ''))) return showError('err0', 'Enter a valid Safaricom number e.g. 0712345678');
+  const email    = document.getElementById('email').value.trim();
+  const country  = document.getElementById('country').value;
+
+  if (!phone || !full_name || !email) return showError('err0', 'Please fill in all fields.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('err0', 'Enter a valid email address.');
 
   setLoading('btn0', true, 'Sending code...');
   try {
-    regPhone = phone.replace(/\s/g, '');
-    await api('/auth/register', { method: 'POST', body: JSON.stringify({ phone: regPhone, full_name }) });
-    document.getElementById('otpSub').textContent = `A 6-digit code was sent to ${regPhone}.`;
+    regPhone   = phone;
+    regEmail   = email;
+    regCountry = country;
+    await api('/auth/register', { method: 'POST', body: JSON.stringify({ phone, full_name, email, country }) });
+    document.getElementById('otpSub').textContent = `A 6-digit code was sent to ${regEmail}.`;
     goStep(1);
   } catch (err) {
-    // If already registered, try login flow
     if (err.message.includes('already registered')) {
       try {
-        await api('/auth/login', { method: 'POST', body: JSON.stringify({ phone: regPhone }) });
-        document.getElementById('otpSub').textContent = `Welcome back. A code was sent to ${regPhone}.`;
+        await api('/auth/login', { method: 'POST', body: JSON.stringify({ phone, country }) });
+        document.getElementById('otpSub').textContent = `Welcome back. A code was sent to ${regEmail}.`;
         goStep(1);
       } catch (e) { showError('err0', e.message); }
     } else {
@@ -603,12 +643,10 @@ async function handleRegister() {
   }
 }
 
-// Step 2 — Verify OTP
 function otpNext(el, idx) {
   const inputs = document.querySelectorAll('.otp-input');
   if (el.value.length === 1 && idx < 5) inputs[idx + 1].focus();
-  const filled = Array.from(inputs).every(i => i.value.length === 1);
-  document.getElementById('otpBtn').disabled = !filled;
+  document.getElementById('otpBtn').disabled = !Array.from(inputs).every(i => i.value.length === 1);
 }
 
 async function handleVerifyOtp() {
@@ -616,7 +654,7 @@ async function handleVerifyOtp() {
   const otp = Array.from(document.querySelectorAll('.otp-input')).map(i => i.value).join('');
   setLoading('otpBtn', true, 'Verifying...');
   try {
-    const res = await api('/auth/verify-otp', { method: 'POST', body: JSON.stringify({ phone: regPhone, otp }) });
+    const res = await api('/auth/verify-otp', { method: 'POST', body: JSON.stringify({ phone: regPhone, otp, country: regCountry }) });
     auth.save(res.token, res.user);
     goStep(2);
   } catch (err) {
@@ -626,12 +664,11 @@ async function handleVerifyOtp() {
   }
 }
 
-// Step 3 — Identity
 async function handleIdentity() {
   clearError('err2');
-  const national_id = document.getElementById('nationalId').value.trim();
+  const national_id   = document.getElementById('nationalId').value.trim();
   const date_of_birth = document.getElementById('dob').value;
-  const county = document.getElementById('county').value;
+  const county        = document.getElementById('county').value.trim();
   if (!national_id || !date_of_birth || !county) return showError('err2', 'All fields are required.');
 
   setLoading('btn2', true, 'Verifying identity...');
@@ -653,39 +690,28 @@ async function loadDashboard() {
   if (!auth.isLoggedIn()) { showPage('register'); return; }
   try {
     const profile = await api('/profile/me');
-    const user = profile;
     const trust = profile.trust;
-
-    // Sidebar
-    const initials = user.full_name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+    const initials = profile.full_name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
     document.getElementById('sidebarAvatar').textContent = initials;
-    document.getElementById('sidebarName').textContent = user.full_name;
-    document.getElementById('sidebarStatus').textContent = '● ' + (user.is_verified ? 'Verified' : 'Unverified');
-
-    // Header
+    document.getElementById('sidebarName').textContent = profile.full_name;
+    document.getElementById('sidebarStatus').textContent = '● ' + (profile.is_verified ? 'Verified' : 'Unverified');
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
-    document.getElementById('dashGreeting').textContent = `${greeting}, ${user.full_name.split(' ')[0]}.`;
-    document.getElementById('dashSubtitle').textContent = `${user.nexum_id} · Score updated just now`;
-
-    // Metrics
+    document.getElementById('dashGreeting').textContent = `${greeting}, ${profile.full_name.split(' ')[0]}.`;
+    document.getElementById('dashSubtitle').textContent = `${profile.nexum_id} · Score updated just now`;
     document.getElementById('metricScore').textContent = trust.score;
     document.getElementById('metricTier').textContent = trust.tier.charAt(0).toUpperCase() + trust.tier.slice(1) + ' tier';
     document.getElementById('metricRefs').textContent = profile.stats.verified_references;
     document.getElementById('metricQueries').textContent = profile.stats.profile_queries;
-
-    // Profile tab
-    document.getElementById('profileNexumId').textContent = 'NEXUM ID: ' + user.nexum_id;
+    document.getElementById('profileNexumId').textContent = 'NEXUM ID: ' + profile.nexum_id;
     document.getElementById('profileScore').textContent = trust.score;
     document.getElementById('profileTier').textContent = trust.tier.charAt(0).toUpperCase() + trust.tier.slice(1) + ' tier';
     document.getElementById('profileScoreBar').style.width = (trust.score / 10) + '%';
-    document.getElementById('idName').textContent = user.full_name;
-    document.getElementById('idPhone').textContent = user.phone;
-    document.getElementById('idCounty').textContent = user.county || '—';
-    document.getElementById('idSince').textContent = new Date(user.member_since).toLocaleDateString('en-KE', { year: 'numeric', month: 'long' });
-    document.getElementById('idStatus').textContent = user.verification_tier === 'verified' ? '✓ Fully verified' : '○ Basic verified';
-
-    // Score breakdown bars
+    document.getElementById('idName').textContent = profile.full_name;
+    document.getElementById('idPhone').textContent = profile.phone;
+    document.getElementById('idCounty').textContent = profile.county || '—';
+    document.getElementById('idSince').textContent = new Date(profile.member_since).toLocaleDateString('en-KE', { year: 'numeric', month: 'long' });
+    document.getElementById('idStatus').textContent = profile.verification_tier === 'verified' ? '✓ Fully verified' : '○ Basic verified';
     const b = trust.breakdown;
     const bars = { identity: b.identity_pct, transaction: b.transaction_pct, references: b.references_pct, dispute: b.dispute_pct, payment: b.payment_pct };
     Object.entries(bars).forEach(([k, v]) => {
@@ -694,20 +720,13 @@ async function loadDashboard() {
       if (bar) setTimeout(() => { bar.style.width = v + '%'; }, 300);
       if (val) val.textContent = v + '%';
     });
-
-    // Transactions count from trust events
-    const txCount = Math.round((b.transaction_pct / 100) * 37);
-    document.getElementById('metricTx').textContent = txCount;
-
-    // Recent activity
+    document.getElementById('metricTx').textContent = Math.round((b.transaction_pct / 100) * 37);
     renderActivity(profile.recent_activity, 'recentActivity', 4);
     renderActivity(profile.recent_activity, 'fullActivity', 20);
-
   } catch (err) {
-    console.error('[NEXUM] Dashboard load error:', err.message);
+    console.error('[NEXUM] Dashboard error:', err.message);
     if (err.message.includes('Invalid') || err.message.includes('expired')) {
-      auth.clear();
-      showPage('register');
+      auth.clear(); showPage('register');
     }
   }
 }
@@ -719,30 +738,28 @@ function renderActivity(events, containerId, limit) {
     return;
   }
   const typeMap = {
-    phone_verified:        { label: 'Phone verified',        cls: 'type-verification' },
-    national_id_verified:  { label: 'Identity verified',     cls: 'type-verification' },
-    transaction_completed: { label: 'Transaction completed', cls: 'type-payment' },
-    transaction_disputed:  { label: 'Dispute raised',        cls: 'type-query' },
-    reference_added:       { label: 'Reference added',       cls: 'type-verification' },
-    profile_queried:       { label: 'Profile queried',       cls: 'type-query' },
-    annual_reverification: { label: 'Annual re-verification',cls: 'type-verification' },
+    phone_verified:        { label: 'Phone verified',         cls: 'type-verification' },
+    national_id_verified:  { label: 'Identity verified',      cls: 'type-verification' },
+    transaction_completed: { label: 'Transaction completed',  cls: 'type-payment' },
+    transaction_disputed:  { label: 'Dispute raised',         cls: 'type-query' },
+    reference_added:       { label: 'Reference added',        cls: 'type-verification' },
+    profile_queried:       { label: 'Profile queried',        cls: 'type-query' },
+    annual_reverification: { label: 'Annual re-verification', cls: 'type-verification' },
   };
   container.innerHTML = events.slice(0, limit).map(e => {
     const t = typeMap[e.event] || { label: e.event, cls: 'type-verification' };
     const date = new Date(e.at).toLocaleDateString('en-KE', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-    return `
-      <div class="activity-row">
-        <div class="activity-row-info"><h4>${t.label}</h4><p>${e.source} · ${date}</p></div>
-        <div class="activity-row-type ${t.cls}">${t.cls.replace('type-', '')}</div>
-        <div class="activity-row-amount neutral">—</div>
-      </div>`;
+    return `<div class="activity-row">
+      <div class="activity-row-info"><h4>${t.label}</h4><p>${e.source} · ${date}</p></div>
+      <div class="activity-row-type ${t.cls}">${t.cls.replace('type-', '')}</div>
+      <div class="activity-row-amount neutral">—</div>
+    </div>`;
   }).join('');
 }
 
-// ─── API KEY GENERATION ───────────────────────────
 async function generateApiKey() {
-  const business_name = prompt('Your business name:');
-  const contact_email = prompt('Your business email:');
+  const business_name  = prompt('Your business name:');
+  const contact_email  = prompt('Your business email:');
   if (!business_name || !contact_email) return;
   try {
     const res = await api('/api/keys', { method: 'POST', body: JSON.stringify({ business_name, contact_email, plan: 'starter' }) });
@@ -757,7 +774,6 @@ async function generateApiKey() {
   }
 }
 
-// ─── DASHBOARD TABS ───────────────────────────────
 function switchTab(tab, el) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.sidebar-item').forEach(t => t.classList.remove('active'));
